@@ -28,7 +28,7 @@ clientAI = genai.Client(api_key=GOOGLE_API_KEY)
 
 app = Flask(__name__)
 
-CORS(app, methods=['POST'])
+CORS(app,  resources={r"/api/*": {"origins": "http://localhost:3000", "methods": ["GET", "POST"]}})
 
 # MongoDB connection
 #client = MongoClient("mongodb://localhost:27017")
